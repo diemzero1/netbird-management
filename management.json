@@ -1,0 +1,100 @@
+{
+    "Stuns": [
+        {
+            "Proto": "udp",
+            "URI": "stun:192.168.15.6:3478",
+            "Username": "",
+            "Password": ""
+        }
+    ],
+    "TURNConfig": {
+        "TimeBasedCredentials": false,
+        "CredentialsTTL": "12h0m0s",
+        "Secret": "secret",
+        "Turns": [
+            {
+                "Proto": "udp",
+                "URI": "turn:192.168.15.6:3478",
+                "Username": "self",
+                "Password": "Uf4eHGNO20Y8SmjlWRiDewEI5D+MWWyLD8RaNZ4MWZE"
+            }
+        ]
+    },
+    "Signal": {
+        "Proto": "http",
+        "URI": "192.168.15.6:10000",
+        "Username": "",
+        "Password": ""
+    },
+    "Datadir": "/var/lib/netbird/",
+    "DataStoreEncryptionKey": "myQ1EEup1OT2liFiew25S/JTeXbPFaFjOXRkgMKcmTo=",
+    "HttpConfig": {
+        "LetsEncryptDomain": "",
+        "CertFile": "",
+        "CertKey": "",
+        "AuthAudience": "netbird-client",
+        "AuthIssuer": "https://id.lab.linksafe.vn/realms/netdev",
+        "AuthUserIDClaim": "",
+        "AuthKeysLocation": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/certs",
+        "OIDCConfigEndpoint": "https://id.lab.linksafe.vn/realms/netdev/.well-known/openid-configuration",
+        "IdpSignKeyRefreshEnabled": false
+    },
+    "IdpManagerConfig": {
+        "ManagerType": "keycloak",
+        "ClientConfig": {
+            "Issuer": "https://id.lab.linksafe.vn/realms/netdev",
+            "TokenEndpoint": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/token",
+            "ClientID": "netbird-backend",
+            "ClientSecret": "CxpAdSREUwdYIRlDlwYwxCBeaV7rL86K",
+            "GrantType": "client_credentials"
+        },
+        "ExtraConfig": {
+            "AdminEndpoint": "https://id.lab.linksafe.vn/admin/realms/netdev"
+        },
+        "Auth0ClientCredentials": null,
+        "AzureClientCredentials": null,
+        "KeycloakClientCredentials": null,
+        "ZitadelClientCredentials": null
+    },
+    "DeviceAuthorizationFlow": {
+        "Provider": "hosted",
+        "ProviderConfig": {
+            "ClientID": "netbird-client",
+            "ClientSecret": "",
+            "Domain": "id.lab.linksafe.vn",
+            "Audience": "netbird-client",
+            "TokenEndpoint": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/token",
+            "DeviceAuthEndpoint": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/auth/device",
+            "AuthorizationEndpoint": "",
+            "Scope": "openid",
+            "UseIDToken": false,
+            "RedirectURLs": null
+        }
+    },
+    "PKCEAuthorizationFlow": {
+        "ProviderConfig": {
+            "ClientID": "netbird-client",
+            "ClientSecret": "",
+            "Domain": "",
+            "Audience": "netbird-client",
+            "TokenEndpoint": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/token",
+            "DeviceAuthEndpoint": "",
+            "AuthorizationEndpoint": "https://id.lab.linksafe.vn/realms/netdev/protocol/openid-connect/auth",
+            "Scope": "openid profile email offline_access api",
+            "UseIDToken": false,
+            "RedirectURLs": [
+                "http://localhost:53000"
+            ]
+        }
+    },
+    "StoreConfig": {
+        "Engine": "sqlite"
+    },
+    "ReverseProxy": {
+        "TrustedHTTPProxies": [],
+        "TrustedHTTPProxiesCount": 0,
+        "TrustedPeers": [
+            "0.0.0.0/0"
+        ]
+    }
+}
