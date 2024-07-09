@@ -538,6 +538,7 @@ func (am *DefaultAccountManager) AddPeer(setupKey, userID string, peer *nbpeer.P
 			Groups:      routes.Groups,
 			Peer:        newPeer.ID,
 			PeerGroups:  routes.PeerGroups,
+			KeyID:       routes.KeyID,
 		}
 
 		log.Infof("UserID: %s, RouteID: %s", newRoute.Network, account.Id)
