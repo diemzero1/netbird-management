@@ -184,6 +184,8 @@ func (h *RoutesHandler) UpdateRoute(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	routes := account.Routes[route.ID(routeID)]
+
 	newRoute := &route.Route{
 		ID:          route.ID(routeID),
 		Network:     newPrefix,
@@ -194,6 +196,7 @@ func (h *RoutesHandler) UpdateRoute(w http.ResponseWriter, r *http.Request) {
 		Description: req.Description,
 		Enabled:     req.Enabled,
 		Groups:      req.Groups,
+		KeyID:       routes.KeyID,
 	}
 
 	if req.Peer != nil {
